@@ -10,7 +10,6 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      spacing: 30,
       children: [
         SizedBox(
           height: 140,
@@ -27,12 +26,11 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(width: 30),
         Expanded(
           child: Column(
-            spacing: 3,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 10),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.5,
                 child: Text(
@@ -42,7 +40,9 @@ class BestSellerListViewItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
+              SizedBox(height: 3),
               Text('J.K. Rowling', style: Styles.textStyle14),
+              SizedBox(height: 3),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
