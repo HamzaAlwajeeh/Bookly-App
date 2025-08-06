@@ -7,6 +7,9 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [HomeViewHeader(), HomeViewBodyContent()]);
+    return Padding(
+      padding: const EdgeInsets.only(top: 8, left: 16),
+      child: Column(children: [HomeViewHeader(), HomeViewBodyContent()]),
+    );
   }
 }

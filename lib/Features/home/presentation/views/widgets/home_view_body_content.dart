@@ -6,6 +6,16 @@ class HomeViewBodyContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [FeaturedListView()]);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        FeaturedListView(),
+        SizedBox(height: 20),
+        Text(
+          'Best Seller',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+      ],
+    );
   }
 }
