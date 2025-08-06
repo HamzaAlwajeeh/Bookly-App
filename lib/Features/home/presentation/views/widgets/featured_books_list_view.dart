@@ -1,5 +1,5 @@
 import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_item.dart';
-import 'package:bookly_app/Features/home/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/Features/home/controller/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/core/utils/widgets/custom_error_message.dart';
 import 'package:bookly_app/core/utils/widgets/custom_loading_indecator.dart';
 import 'package:flutter/material.dart';

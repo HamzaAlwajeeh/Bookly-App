@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly_app/Features/home/controller/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/newest_books_list_view_item.dart';
 import 'package:bookly_app/core/utils/widgets/custom_error_message.dart';
 import 'package:bookly_app/core/utils/widgets/custom_loading_indecator.dart';
