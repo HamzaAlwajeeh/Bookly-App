@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key});
-
+  const CustomTextField({super.key, this.onPressed});
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -17,7 +17,7 @@ class CustomTextField extends StatelessWidget {
           hintText: 'Search...',
           hintStyle: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
           suffixIcon: IconButton(
-            onPressed: () {},
+            onPressed: onPressed,
             icon: Icon(FontAwesomeIcons.magnifyingGlass),
             iconSize: 18,
           ),
