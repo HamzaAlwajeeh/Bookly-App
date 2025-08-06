@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
 class SimilarBookListView extends StatelessWidget {
@@ -7,6 +7,7 @@ class SimilarBookListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       padding: EdgeInsets.only(left: 10),
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) {
