@@ -29,13 +29,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Image.asset(AssetsData.darkLogo),
-        SlidingText(slidingAnimation: slidingAnimation),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Image.asset(AssetsData.darkLogo),
+          SlidingText(slidingAnimation: slidingAnimation),
+        ],
+      ),
     );
   }
 
