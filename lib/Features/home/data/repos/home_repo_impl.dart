@@ -9,9 +9,23 @@ import 'package:dio/dio.dart';
 class HomeRepoImpl implements HomeRepo {
   ApiService apiService = ApiService();
   @override
-  Future<Either<Failure, List<BookModel>>> fetchBestSwllerBooks() {
-    // TODO: implement fetchBestSwllerBooks
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
+      var data = await apiService.get(
+        endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming',
+      );
+      List<BookModel> books = [];
+
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
   }
 
   @override
