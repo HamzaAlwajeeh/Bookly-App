@@ -1,3 +1,6 @@
+import 'package:bookly_app/Features/home/data/repos/home_repo_impl.dart';
+import 'package:bookly_app/Features/home/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/Features/home/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/simple_bloc_observer.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
@@ -18,13 +21,25 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRouter.router,
-      debugShowCheckedModeBanner: false,
-      title: 'Bookly App',
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: kPrimaryColor,
-        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => FeaturedBooksCubit(getIt<HomeRepoImpl>()),
+        ),
+        BlocProvider(
+          create: (context) => NewestBooksCubit(getIt<HomeRepoImpl>()),
+        ),
+      ],
+      child: MaterialApp.router(
+        routerConfig: AppRouter.router,
+        debugShowCheckedModeBanner: false,
+        title: 'Bookly App',
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: kPrimaryColor,
+          textTheme: GoogleFonts.montserratTextTheme(
+            ThemeData.dark().textTheme,
+          ),
+        ),
       ),
     );
   }
