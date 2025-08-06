@@ -7,24 +7,27 @@ class BookDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text("The Jungle Book", style: Styles.textStyle30),
-        SizedBox(height: 2),
-        Opacity(
-          opacity: 0.7,
-          child: Text(
-            "Rudyard Kipling",
-            style: Styles.textStyle16.copyWith(
-              fontWeight: FontWeight.w500,
-              fontStyle: FontStyle.italic,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text("The Jungle Book", style: Styles.textStyle30),
+          SizedBox(height: 2),
+          Opacity(
+            opacity: 0.7,
+            child: Text(
+              "Rudyard Kipling",
+              style: Styles.textStyle16.copyWith(
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
-        ),
-        SizedBox(height: 16),
-        BooksRating(),
-      ],
+          SizedBox(height: 16),
+          BooksRating(),
+        ],
+      ),
     );
   }
 }
