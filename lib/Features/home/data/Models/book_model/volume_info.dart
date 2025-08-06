@@ -20,7 +20,7 @@ class VolumeInfo extends Equatable {
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
-  final ImageLinks imageLinks;
+  final ImageLinks? imageLinks;
   final String? language;
   final String? previewLink;
   final String? infoLink;
@@ -98,7 +98,7 @@ class VolumeInfo extends Equatable {
     'allowAnonLogging': allowAnonLogging,
     'contentVersion': contentVersion,
     'panelizationSummary': panelizationSummary?.toJson(),
-    'imageLinks': imageLinks.toJson(),
+    'imageLinks': imageLinks?.toJson(),
     'language': language,
     'previewLink': previewLink,
     'infoLink': infoLink,
