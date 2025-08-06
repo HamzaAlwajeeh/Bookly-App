@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, this.onPressed});
+  const CustomTextField({super.key, this.onPressed, this.onChanged});
+
+  final void Function(String)? onChanged;
   final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
       child: TextField(
+        onChanged: onChanged,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
           filled: true,

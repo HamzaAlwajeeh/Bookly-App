@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bookly_app/Features/home/data/repos/home_repo.dart';
 import 'package:bookly_app/core/errors/failures.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:bookly_app/core/utils/api_service.dart';
-import 'package:bookly_app/core/utils/models/book_model/book_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
@@ -13,7 +13,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-        endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming',
+        endPoint: 'volumes?Filtering=free-ebooks&q=subject:general',
       );
       List<BookModel> books = [];
 
@@ -56,8 +56,7 @@ class HomeRepoImpl implements HomeRepo {
   }) async {
     try {
       var data = await apiService.get(
-        endPoint:
-            'volumes?Filtering=free-ebooks&q=subject:programming&sorting=relevance',
+        endPoint: 'volumes?filtering=free-ebooks&q=subject:$category',
       );
       List<BookModel> books = [];
 

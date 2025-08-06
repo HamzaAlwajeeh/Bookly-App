@@ -1,8 +1,8 @@
 import 'package:bookly_app/Features/Home/presentation/views/widgets/books_rating.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_item.dart';
 import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
-import 'package:bookly_app/core/utils/models/book_model/book_model.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -37,7 +37,10 @@ class NewestBooksListViewItem extends StatelessWidget {
                 ),
                 SizedBox(height: 3),
                 Text(
-                  bookModel.volumeInfo.authors![0],
+                  (bookModel.volumeInfo.authors != null &&
+                          bookModel.volumeInfo.authors!.isNotEmpty)
+                      ? bookModel.volumeInfo.authors![0]
+                      : 'unkown',
                   style: Styles.textStyle14,
                 ),
                 SizedBox(height: 3),

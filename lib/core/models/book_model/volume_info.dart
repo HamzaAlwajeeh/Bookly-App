@@ -50,7 +50,9 @@ class VolumeInfo extends Equatable {
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
     title: json['title'] as String?,
-    authors: (json['authors'] as List<dynamic>).cast<String>(),
+    authors:
+        (json['authors'] == null ? [] : json['authors'] as List<dynamic>)
+            .cast<String>(),
     publisher: json['publisher'] as String?,
     publishedDate: json['publishedDate'] as String?,
     description: json['description'] as String?,
@@ -66,7 +68,7 @@ class VolumeInfo extends Equatable {
             ),
     pageCount: json['pageCount'] as int?,
     printType: json['printType'] as String?,
-    categories: (json['categories'] as List<dynamic>).cast<String>(),
+    categories: (json['categories'] as List<dynamic>?)?.cast<String>() ?? [],
     maturityRating: json['maturityRating'] as String?,
     allowAnonLogging: json['allowAnonLogging'] as bool?,
     contentVersion: json['contentVersion'] as String?,
@@ -128,5 +130,30 @@ class VolumeInfo extends Equatable {
       infoLink,
       canonicalVolumeLink,
     ];
+  }
+
+  @override
+  String toString() {
+    return 'VolumeInfo('
+        'title: $title, '
+        'authors: $authors, '
+        'publisher: $publisher, '
+        'publishedDate: $publishedDate, '
+        'description: $description, '
+        'industryIdentifiers: $industryIdentifiers, '
+        'readingModes: $readingModes, '
+        'pageCount: $pageCount, '
+        'printType: $printType, '
+        'categories: $categories, '
+        'maturityRating: $maturityRating, '
+        'allowAnonLogging: $allowAnonLogging, '
+        'contentVersion: $contentVersion, '
+        'panelizationSummary: $panelizationSummary, '
+        'imageLinks: $imageLinks, '
+        'language: $language, '
+        'previewLink: $previewLink, '
+        'infoLink: $infoLink, '
+        'canonicalVolumeLink: $canonicalVolumeLink'
+        ')';
   }
 }

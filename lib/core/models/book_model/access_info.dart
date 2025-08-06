@@ -29,11 +29,16 @@ class AccessInfo extends Equatable {
   });
 
   factory AccessInfo.fromJson(Map<String, dynamic> json) => AccessInfo(
-    country: json['country'] as String?,
-    viewability: json['viewability'] as String?,
-    embeddable: json['embeddable'] as bool?,
-    publicDomain: json['publicDomain'] as bool?,
-    textToSpeechPermission: json['textToSpeechPermission'] as String?,
+    country: json['country'] == null ? '' : json['country'] as String,
+    viewability:
+        json['viewability'] == null ? '' : json['viewability'] as String,
+    embeddable: json['embeddable'] == null ? false : json['embeddable'] as bool,
+    publicDomain:
+        json['publicDomain'] == null ? false : json['publicDomain'] as bool,
+    textToSpeechPermission:
+        json['textToSpeechPermission'] == null
+            ? ''
+            : json['textToSpeechPermission'] as String,
     epub:
         json['epub'] == null
             ? null
@@ -42,9 +47,16 @@ class AccessInfo extends Equatable {
         json['pdf'] == null
             ? null
             : Pdf.fromJson(json['pdf'] as Map<String, dynamic>),
-    webReaderLink: json['webReaderLink'] as String?,
-    accessViewStatus: json['accessViewStatus'] as String?,
-    quoteSharingAllowed: json['quoteSharingAllowed'] as bool?,
+    webReaderLink:
+        json['webReaderLink'] == null ? '' : json['webReaderLink'] as String,
+    accessViewStatus:
+        json['accessViewStatus'] == null
+            ? ''
+            : json['accessViewStatus'] as String,
+    quoteSharingAllowed:
+        json['quoteSharingAllowed'] == null
+            ? false
+            : json['quoteSharingAllowed'] as bool,
   );
 
   Map<String, dynamic> toJson() => {

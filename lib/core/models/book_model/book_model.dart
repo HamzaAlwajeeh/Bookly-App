@@ -70,4 +70,18 @@ class BookModel extends Equatable {
       searchInfo,
     ];
   }
+
+  @override
+  String toString() {
+    return 'BookModel('
+        'kind: $kind, '
+        'id: $id, '
+        'etag: $etag, '
+        'selfLink: $selfLink, '
+        'volumeInfo: $volumeInfo, '
+        'saleInfo: $saleInfo, '
+        'accessInfo: $accessInfo, '
+        'searchInfo: $searchInfo'
+        ')';
+  }
 }
