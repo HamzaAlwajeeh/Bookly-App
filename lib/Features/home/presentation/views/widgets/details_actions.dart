@@ -10,7 +10,7 @@ class DetailsActions extends StatelessWidget {
       children: [
         Expanded(
           child: CustomButton(
-            text: '19.99\$',
+            text: '19.99 \$',
             textColor: Colors.black,
             backgroundColor: Colors.white,
             borderRadius: BorderRadius.only(
@@ -22,7 +22,6 @@ class DetailsActions extends StatelessWidget {
         ),
         Expanded(
           child: CustomButton(
-            fontWeight: FontWeight.w500,
             text: 'Free Preview',
             textColor: Colors.white,
             backgroundColor: Color(0xffEF8262),

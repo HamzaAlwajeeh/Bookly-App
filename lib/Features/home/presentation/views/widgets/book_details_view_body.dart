@@ -11,13 +11,14 @@ class BookDetailsViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
+          hasScrollBody: false,
           child: Column(
             children: [
               BookDetailsCustomAppBar(),
               BookDetailsSection(),
               Expanded(child: SizedBox(height: 30)),
               SimilarBooksSection(),
-              SizedBox(height: 30),
+              SizedBox(height: 40),
             ],
           ),
         ),

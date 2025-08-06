@@ -15,12 +15,12 @@ class SimilarBooksSection extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'You can also like',
-              style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
+              style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
             ),
           ),
         ),
         SizedBox(height: 10),
-        SizedBox(height: 125, child: SimilarBookListView()),
+        SizedBox(height: 140, child: SimilarBookListView()),
       ],
     );
   }

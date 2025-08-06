@@ -10,7 +10,7 @@ class SearchViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -18,7 +18,7 @@ class SearchViewBody extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               'Search Results',
-              style: Styles.textStyle14.copyWith(fontWeight: FontWeight.bold),
+              style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
             Expanded(child: SearchResultListView()),

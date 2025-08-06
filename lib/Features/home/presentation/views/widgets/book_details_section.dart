@@ -26,14 +26,14 @@ class BookDetailsSection extends StatelessWidget {
             child: Text(
               "Rudyard Kipling",
               style: Styles.textStyle16.copyWith(
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w700,
                 fontStyle: FontStyle.italic,
               ),
             ),
           ),
           SizedBox(height: 10),
           BooksRating(),
-          SizedBox(height: 20),
+          SizedBox(height: 25),
           DetailsActions(),
         ],
       ),

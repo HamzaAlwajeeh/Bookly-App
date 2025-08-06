@@ -8,10 +8,10 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 42,
+      height: 50,
       child: TextField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(horizontal: 16),
+          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
           filled: true,
           fillColor: Colors.white.withOpacity(0.25),
           hintText: 'Search...',
