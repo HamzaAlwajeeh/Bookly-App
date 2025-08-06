@@ -1,0 +1,30 @@
+import 'package:bookly_app/Features/home/presentation/views/widgets/books_rating.dart';
+import 'package:bookly_app/core/utils/styles.dart';
+import 'package:flutter/material.dart';
+
+class BookDetails extends StatelessWidget {
+  const BookDetails({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text("The Jungle Book", style: Styles.textStyle30),
+        SizedBox(height: 2),
+        Opacity(
+          opacity: 0.7,
+          child: Text(
+            "Rudyard Kipling",
+            style: Styles.textStyle16.copyWith(
+              fontWeight: FontWeight.w500,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+        ),
+        SizedBox(height: 16),
+        BooksRating(),
+      ],
+    );
+  }
+}

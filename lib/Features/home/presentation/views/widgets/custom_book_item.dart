@@ -20,7 +20,7 @@ class CustomBookItem extends StatelessWidget {
               image: AssetImage(AssetsData.testImage),
               fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(16),
           ),
         ),
       ),
