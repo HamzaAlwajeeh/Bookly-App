@@ -1,10 +1,15 @@
+import 'dart:developer';
+
+import 'package:bookly_app/Features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+void main() async {
   runApp(const BooklyApp());
+  var books = await HomeRepoImpl().fetchNewsetBooks();
+  log(books.toString());
 }
 
 class BooklyApp extends StatelessWidget {
