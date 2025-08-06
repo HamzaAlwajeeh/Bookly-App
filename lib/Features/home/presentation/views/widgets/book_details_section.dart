@@ -1,17 +1,24 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_rating.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/details_actions.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class BookDetails extends StatelessWidget {
-  const BookDetails({super.key});
+class BookDetailsSection extends StatelessWidget {
+  const BookDetailsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.35,
+            child: CustomBookItem(),
+          ),
+          SizedBox(height: 18),
           Text("The Jungle Book", style: Styles.textStyle30),
           SizedBox(height: 2),
           Opacity(
@@ -24,8 +31,10 @@ class BookDetails extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 16),
+          SizedBox(height: 10),
           BooksRating(),
+          SizedBox(height: 20),
+          DetailsActions(),
         ],
       ),
     );

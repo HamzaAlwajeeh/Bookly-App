@@ -2,8 +2,8 @@ import 'package:bookly_app/Features/home/presentation/views/widgets/similar_book
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class SimilarBooks extends StatelessWidget {
-  const SimilarBooks({super.key});
+class SimilarBooksSection extends StatelessWidget {
+  const SimilarBooksSection({super.key});
 
   @override
   Widget build(BuildContext context) {

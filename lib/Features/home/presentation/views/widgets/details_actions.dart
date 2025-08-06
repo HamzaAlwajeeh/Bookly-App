@@ -6,37 +6,34 @@ class DetailsActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Row(
-        children: [
-          Expanded(
-            child: CustomButton(
-              text: '19.99\$',
-              textColor: Colors.black,
-              backgroundColor: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16),
-                bottomLeft: Radius.circular(16),
-              ),
-              onPressed: () {},
+    return Row(
+      children: [
+        Expanded(
+          child: CustomButton(
+            text: '19.99\$',
+            textColor: Colors.black,
+            backgroundColor: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(16),
+              bottomLeft: Radius.circular(16),
             ),
+            onPressed: () {},
           ),
-          Expanded(
-            child: CustomButton(
-              fontWeight: FontWeight.w500,
-              text: 'Free Preview',
-              textColor: Colors.white,
-              backgroundColor: Color(0xffEF8262),
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(16),
-                bottomRight: Radius.circular(16),
-              ),
-              onPressed: () {},
+        ),
+        Expanded(
+          child: CustomButton(
+            fontWeight: FontWeight.w500,
+            text: 'Free Preview',
+            textColor: Colors.white,
+            backgroundColor: Color(0xffEF8262),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(16),
+              bottomRight: Radius.circular(16),
             ),
+            onPressed: () {},
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
