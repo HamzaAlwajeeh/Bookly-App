@@ -1,9 +1,27 @@
-import 'package:bloc/bloc.dart';
+import 'package:bookly_app/Features/Search/data/repos/search_repo.dart';
 import 'package:bookly_app/core/utils/models/book_model/book_model.dart';
+import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'search_state.dart';
 
 class SearchCubit extends Cubit<SearchState> {
-  SearchCubit() : super(SearchInitial());
+  SearchCubit(this.searchRepo) : super(SearchInitial());
+  final SearchRepo searchRepo;
+
+  Future<void> fechSearchBooks({required String qurey}) async {
+    emit(SearchLoading());
+
+    var result = await searchRepo.fetchSearchBooks(query: qurey);
+
+    result.fold(
+      (failure) {
+        return left(emit(SearchFailure(errorMessage: failure.errorMessage)));
+      },
+      (books) {
+        return right(emit(SearchSuccess(books: books)));
+      },
+    );
+  }
 }
