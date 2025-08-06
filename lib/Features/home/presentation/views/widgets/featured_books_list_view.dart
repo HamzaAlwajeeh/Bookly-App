@@ -1,5 +1,8 @@
 import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly_app/Features/home/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FeaturedBookslistview extends StatelessWidget {
   const FeaturedBookslistview({super.key});
@@ -8,17 +11,29 @@ class FeaturedBookslistview extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
-      child: ListView.builder(
-        padding: EdgeInsets.only(left: 10),
-        physics: const BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 6),
-            child: const CustomBookItem(),
-          );
+      child: BlocBuilder<FeaturedBooksCubit, FeaturedBooksStates>(
+        builder: (context, state) {
+          if (state is FeaturedBooksSuccess) {
+            return ListView.builder(
+              itemCount: state.books.length,
+              padding: EdgeInsets.only(left: 10),
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  child: const CustomBookItem(),
+                );
+              },
+            );
+          } else if (state is FeaturedBooksFailure) {
+            return Center(
+              child: Text(state.errorMessage, style: Styles.textStyle18),
+            );
+          } else {
+            return Center(child: CircularProgressIndicator());
+          }
         },
-        itemCount: 10,
       ),
     );
   }

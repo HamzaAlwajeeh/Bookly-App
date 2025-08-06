@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 
 class CustomBookItem extends StatelessWidget {
   const CustomBookItem({super.key});
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
