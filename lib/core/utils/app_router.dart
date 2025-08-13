@@ -1,6 +1,6 @@
 import 'package:bookly_app/Features/Home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/Features/Home/presentation/views/home_view.dart';
-import 'package:bookly_app/Features/Search/controller/earch_cubit/search_cubit.dart';
+import 'package:bookly_app/Features/Search/controller/search_cubit/search_cubit.dart';
 import 'package:bookly_app/Features/Search/data/repos/search_repo_impl.dart';
 import 'package:bookly_app/Features/Search/presentation/views/search_view.dart';
 import 'package:bookly_app/Features/Splash/presentation/views/splash_view.dart';

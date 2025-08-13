@@ -1,7 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:developer';
+
 import 'package:bookly_app/Features/home/data/repos/home_repo.dart';
 import 'package:bookly_app/core/errors/failures.dart';
 import 'package:bookly_app/core/models/book_model/book_model.dart';
+import 'package:bookly_app/core/models/user.dart';
 import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -70,5 +73,22 @@ class HomeRepoImpl implements HomeRepo {
       }
       return left(ServerFailure(errorMessage: e.toString()));
     }
+  }
+
+  @override
+  Future<User> fetchUser() async {
+    try {
+      var data = await ApiService(Dio()).getUserProfile(
+        url: 'http://127.0.0.1:8000/api/user',
+        body: '',
+        token: '1|cnXN0oMopoUmDqNHHXGORAocrXxD6OndOe37iEYc555d3e61',
+      );
+
+      User user = User.fromJson(data);
+      return user;
+    } catch (e) {
+      log(e.toString());
+    }
+    return User();
   }
 }

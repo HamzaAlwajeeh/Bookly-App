@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/Search/controller/earch_cubit/search_cubit.dart';
+import 'package:bookly_app/Features/Search/controller/search_cubit/search_cubit.dart';
 import 'package:bookly_app/Features/Search/presentation/views/widgets/custom_text_field.dart';
 import 'package:bookly_app/Features/Search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:bookly_app/core/utils/styles.dart';
